@@ -22,7 +22,7 @@ jobs:
 
       - name: Deploy
         env:
-          SLACK_TOKEN: ${{ secrets.SlackService }}
-          APP: ${{ secrets.app }}
-          WORKSPACE: ${{ secrets.workspace }}
-        run: slack deploy -s --no-color --token $SLACK_TOKEN --app $APP --workspace $WORKSPACE
+          SLACK_TOKEN: ${{ secrets.SLACKSERVICE }}
+          APP: ${{ secrets.APP }}
+          WORKSPACE: ${{ secrets.WORKSPACE }}
+        run: slack deploy --token $SLACK_TOKEN --app $APP --workspace $WORKSPACE
