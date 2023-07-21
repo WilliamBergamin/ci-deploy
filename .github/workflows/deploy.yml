@@ -21,8 +21,4 @@ jobs:
         run: curl -fsSL https://downloads.slack-edge.com/slack-cli/install.sh | bash
 
       - name: Deploy
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACKSERVICE }}
-          APP: ${{ secrets.APP }}
-          WORKSPACE: ${{ secrets.WORKSPACE }}
-        run: slack deploy --token $SLACK_TOKEN --app $APP --workspace $WORKSPACE
+        run: slack deploy --app ${{ secrets.APP }} --workspace ${{ secrets.WORKSPACE }} --token ${{ secrets.SLACK_SERVICE_TOKEN }}
